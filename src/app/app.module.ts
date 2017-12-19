@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CookieService } from 'ngx-cookie-service';
+//import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -42,13 +42,13 @@ export function getAuthServiceConfigs() {
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    SocialLoginModule
+    SocialLoginModule//,
+   // CookieService
   ],
   providers: [
     {
       provide: AuthServiceConfig,
-      useFactory: getAuthServiceConfigs,
-      CookieService
+      useFactory: getAuthServiceConfigs
     }
   ],
   bootstrap: [AppComponent]
