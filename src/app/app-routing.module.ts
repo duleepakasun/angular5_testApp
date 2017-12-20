@@ -23,6 +23,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: '',
+    canActivate: [AuthGuard],
+    component: HomeComponent
+  },
+  {
     path: 'graphs',
     canActivate: [AuthGuard],
     component: GraphsComponent

@@ -9,8 +9,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
-/*import { AngularFeeds } from 'angular-feeds';
-import {bootstrap} from '@angular/platform-browser-dynamic';
+//import { AngularFeeds } from 'angular-feeds';
+
+/*import {bootstrap} from '@angular/platform-browser-dynamic';
 import {Component, Input} from '@angular/core';
 import {NgFor} from '@angular/common';
 import 'rxjs/add/operator/map';
