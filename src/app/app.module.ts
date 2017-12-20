@@ -9,6 +9,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+/*import { AngularFeeds } from 'angular-feeds';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component, Input} from '@angular/core';
+import {NgFor} from '@angular/common';
+import 'rxjs/add/operator/map';
+import {HTTP_PROVIDERS, Http} from '@angular/http';*/
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from  './auth/auth.guard'
@@ -18,6 +24,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './signin/signin.component';
+import { GraphsComponent } from './graphs/graphs.component';
+//import angular.module('', ['feeds',...])
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -37,14 +45,15 @@ export function getAuthServiceConfigs() {
     AppComponent,
     HomeComponent,
     AboutComponent,
-    SigninComponent
+    SigninComponent,
+    GraphsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    SocialLoginModule//,
+    SocialLoginModule,//,
    // CookieService
   ],
   providers: [

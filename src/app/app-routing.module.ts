@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './signin/signin.component';
-import { AuthGuard } from  './auth/auth.guard'
+import { AuthGuard } from  './auth/auth.guard';
+import {GraphsComponent} from "./graphs/graphs.component";
+//angular.module('angular-feeds-demo', ['feeds',...])
 
 const routes: Routes = [
   {
@@ -16,14 +18,14 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: '',
+    path: 'home',
     canActivate: [AuthGuard],
     component: HomeComponent
   },
   {
-    path: '',
+    path: 'graphs',
     canActivate: [AuthGuard],
-    component: HomeComponent
+    component: GraphsComponent
   }
 ];
 @NgModule({

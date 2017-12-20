@@ -6,6 +6,7 @@ import { Router} from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
+  //scriptUrls: ['http://www.heart.org/idc/groups/heart-public/@wcm/@global/documents/rssfeed/t1_6.xml']
 })
 export class AppComponent {
   title = 'app';
