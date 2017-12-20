@@ -6,6 +6,7 @@ import {
 import { CookieService } from 'ngx-cookie-service';
 import {OauthService} from '../auth/auth.service';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {isUndefined} from "util";
 
 @Component({
   selector: 'app-signin',
@@ -17,6 +18,9 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 export class SigninComponent implements OnInit {
 
   ngOnInit() {
+    if(this.auth.isAuthenticated()){
+      this.router.navigate(['/']);
+    }
   }
 
   constructor( private socialAuthService: AuthService, private cookieService: CookieService, public auth: OauthService, public router: Router) {}
@@ -32,7 +36,15 @@ export class SigninComponent implements OnInit {
         this.cookieService.set('token', userData.token);
         console.log(socialPlatform+" sign in data : " , userData);
         console.log(this.auth.redirectUrl);
-        this.router.navigate([this.auth.redirectUrl])
+
+        var redirectLocation = this.auth.redirectUrl;
+        this.auth.redirectUrl = "";
+
+        if(isUndefined(redirectLocation) || redirectLocation == ""){
+          this.router.navigate(['/'])
+        }
+
+        this.router.navigate([redirectLocation])
       }
     );
   }

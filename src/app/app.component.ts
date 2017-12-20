@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router} from '@angular/router';
+import {OauthService} from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,9 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 
-  constructor( private cookieService: CookieService, private router: Router) { }
+  isLoggedIn() {
+    return this.auth.isAuthenticated();
+  }
+
+  constructor( private cookieService: CookieService, private router: Router, public auth: OauthService) { }
 }
