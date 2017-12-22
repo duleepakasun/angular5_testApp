@@ -9,10 +9,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth/auth.guard';
 import {OauthService} from './auth/auth.service';
+import {FeedService} from './service/feed.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -43,7 +45,8 @@ export function getAuthServiceConfigs() {
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpModule
   ],
   providers: [
     {
@@ -52,7 +55,8 @@ export function getAuthServiceConfigs() {
     },
     CookieService,
     AuthGuard,
-    OauthService
+    OauthService,
+    FeedService
   ],
   bootstrap: [AppComponent]
 })

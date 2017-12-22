@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import {Component, OnInit} from '@angular/core';
+import {trigger, style, transition, animate, keyframes, query, stagger} from '@angular/animations';
+import {Http} from '@angular/http';
+import { FeedService } from '../service/feed.service';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +18,11 @@ export class HomeComponent implements OnInit {
   goalText = 'My first life goal';
   goalPlaceHolder = 'Life goal..';
   goals = [];
+  news = {};
 
-  constructor() { }
+  constructor(private http: Http, private feedService: FeedService) {
+    this.feedService.getNews().subscribe(data => this.news = data);
+  }
 
   ngOnInit() {
     this.itemCount = this.goals.length;
@@ -28,7 +33,7 @@ export class HomeComponent implements OnInit {
       this.goals.push(this.goalText);
       this.goalText = '';
       this.itemCount = this.goals.length;
-    }else {
+    } else {
       this.goalPlaceHolder = 'goal Can\'t be empty';
     }
   }
