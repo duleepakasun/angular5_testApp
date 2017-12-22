@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import {OauthService} from './auth.service'
+import {OauthService} from './auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -14,8 +14,8 @@ export class AuthGuard implements CanActivate {
 
       this.auth.redirectUrl = state.url;
 
-      //console.log(state.url);
-      if(this.auth.isAuthenticated()){
+      // console.log(state.url);
+      if (this.auth.isAuthenticated()) {
         return true;
       }
 

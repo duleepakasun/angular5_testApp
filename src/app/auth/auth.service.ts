@@ -12,7 +12,7 @@ export class OauthService {
 
     const token =  this.cookieService.get('token');
     console.log(token);
-    if(token != null && token != ''){
+    if (token != null && token !== '') {
       return true;
     }
     return false;

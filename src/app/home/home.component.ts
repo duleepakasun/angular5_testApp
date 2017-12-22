@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +12,9 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class HomeComponent implements OnInit {
 
   itemCount: number;
-  btnText: string = 'Add an Item';
-  goalText: string = 'My first life goal'
-  goalPlaceHolder: string = 'Life goal..'
+  btnText = 'Add an Item';
+  goalText = 'My first life goal';
+  goalPlaceHolder = 'Life goal..';
   goals = [];
 
   constructor() { }
@@ -24,13 +24,12 @@ export class HomeComponent implements OnInit {
   }
 
   addItem() {
-    if (this.goalText != null && this.goalText != ''){
+    if (this.goalText != null && this.goalText !== '') {
       this.goals.push(this.goalText);
       this.goalText = '';
       this.itemCount = this.goals.length;
-    }
-    else{
-      this.goalPlaceHolder = "goal Can't be empty"
+    }else {
+      this.goalPlaceHolder = 'goal Can\'t be empty';
     }
   }
 }
