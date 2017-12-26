@@ -11,12 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 //import { AngularFeeds } from 'angular-feeds';
 
-/*import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component, Input} from '@angular/core';
-import {NgFor} from '@angular/common';
-import 'rxjs/add/operator/map';
-import {HTTP_PROVIDERS, Http} from '@angular/http';*/
-
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from  './auth/auth.guard'
 import {OauthService} from './auth/auth.service'

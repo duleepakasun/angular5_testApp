@@ -1,9 +1,28 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-//import 'https://www.googlcom/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22feeds%22%2C%22version%22%3A%221.0%22%2C%22nocss%22%3Atrue%7D%5D%7D.js';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+
+import {Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common'
+
+import 'rxjs/add/operator/map';
+import {NgModule} from "../node_modules/@angular/core/src/metadata/ng_module";
+import {GraphsComponent} from "./app/graphs/graphs.component";
+
+import {
+  Component,
+  Directive,
+  Renderer,
+  ElementRef,
+  NgModule,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+
 
 if (environment.production) {
   enableProdMode();
@@ -12,11 +31,34 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
 
+@Component({
+  selector: 'app',
+  template: `
+    	<h1>My RSS Reader</h1>
+    	<dashboard></dashboard>
+    `
+})
+
+export class AppComponent {
+  constructor() { }
+
+  ngOnInit() {
+  }
+}
+
+@Directive({
+  selector:"[ccCardHover]"
+})
+
+class CardHoverDirective { }
 
 
+//import {bootstrap} from '@angular/platform-browser-dynamic';
+//import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+//import {NgFor} from '@angular/common';
+//import {HTTP_PROVIDERS, Http} from '@angular/http';
 
-/*
-class FeedService {
+/*class FeedService {
   private feeds =  [
     "http://angular-craft.com/feed/",
     "https://www.smashingmagazine.com/feed/",
@@ -26,9 +68,9 @@ class FeedService {
   getUserFeeds() {
     return this.feeds
   }
-}
+}*/
 
-@Component({
+/*@Component({
   selector: 'feed',
   directives: [NgFor],
   template: `
@@ -44,8 +86,10 @@ class FeedService {
 	      </ul>
 	    </div>
 	`
-})
-class FeedComponent {
+})*/
+
+
+/*class FeedComponent {
   @Input() url;
 
   constructor(private http:Http) {
@@ -60,9 +104,9 @@ class FeedComponent {
         console.log(res);
       });
   }
-}
+}*/
 
-@Component({
+/*@Component({
   selector: 'dashboard',
   template: `
 		<h3>The dashboard</h3>
@@ -77,19 +121,20 @@ class DashboardComponent {
   constructor(private feedService: FeedService) {
     this.feeds = feedService.getUserFeeds();
   }
-}
+}*/
 
 
-@Component({
-  selector: 'app',
-  template: `
-    	<h1>My RSS Reader</h1>
-    	<dashboard></dashboard>
-    `,
-  directives: [DashboardComponent]
-})
-class AppComponent {
-}
 
-bootstrap(AppComponent, [HTTP_PROVIDERS, FeedService]);
-*/
+/*
+@NgModule({
+  //imports: [BrowserModule],
+  declarations: [
+    GraphsComponent
+  ],
+  entryComponents: [
+    GraphsComponent
+  ],
+  //bootstrap: [AppComponent2]
+})*/
+
+//bootstrap(AppComponent, [HTTP_PROVIDERS, FeedService]);
