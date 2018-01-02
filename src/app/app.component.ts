@@ -10,6 +10,7 @@ import {OauthService} from './auth/auth.service';
 })
 export class AppComponent {
   title = 'app';
+  val = true;
 
   logout() {
     this.cookieService.delete('token');

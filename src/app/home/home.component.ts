@@ -18,11 +18,6 @@ export class HomeComponent implements OnInit {
   goalText = 'My first life goal';
   goalPlaceHolder = 'Life goal..';
   goals = [];
-  news = {};
-
-  constructor(private http: Http, private feedService: FeedService) {
-    this.feedService.getNews().subscribe(data => this.news = data);
-  }
 
   ngOnInit() {
     this.itemCount = this.goals.length;

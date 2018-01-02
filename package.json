@@ -23,8 +23,10 @@
     "@angular/router": "^5.0.0",
     "angular5-social-login": "^1.0.9",
     "core-js": "^2.4.1",
+    "koa-cors": "0.0.16",
     "ngx-cookie-service": "^1.0.9",
     "rxjs": "^5.5.2",
+    "xml2js": "^0.4.19",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

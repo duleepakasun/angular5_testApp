@@ -20,6 +20,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './signin/signin.component';
+import { RssFeedTesterComponent } from './rss-feed-tester/rss-feed-tester.component';
+import { CustomRssComponent } from './custom-rss/custom-rss.component';
+
+import { SharedModule } from './shared/shared.module'
+
 
 export function getAuthServiceConfigs() {
   const config = new AuthServiceConfig(
@@ -34,20 +39,26 @@ export function getAuthServiceConfigs() {
 }
 
 @NgModule({
+
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    SigninComponent
+    SigninComponent,
+    RssFeedTesterComponent,
+    CustomRssComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     SocialLoginModule,
-    HttpModule
+    HttpModule,
+    SharedModule
   ],
+
   providers: [
     {
       provide: AuthServiceConfig,

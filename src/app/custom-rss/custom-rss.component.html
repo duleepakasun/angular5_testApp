@@ -1,0 +1,13 @@
+<p>
+  custom-rss works!
+</p>
+
+
+<ul>
+  <li *ngFor="let record of healthRecords.hits">
+    <a href={{record.story_url}} target="_blank">{{record.story_title}}</a>
+    <p class="sm">{{record.comment_text}}</p>
+
+    <br>
+  </li>
+</ul>
